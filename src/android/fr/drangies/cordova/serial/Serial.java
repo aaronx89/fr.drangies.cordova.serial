@@ -209,7 +209,7 @@ public class Serial extends CordovaPlugin {
 				}
 				else {
 					// no available drivers
-					Log.d(TAG, availableDrivers);
+					Log.d(TAG, availableDrivers.get(0));
 					callbackContext.error("No device found!xx");
 				}
 			}
