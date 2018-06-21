@@ -52,7 +52,7 @@
   "name": "cordovarduino",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xseignard/cordovarduino.git"
+    "url": "git+https://github.com/aaronx89/fr.drangies.cordova.serial.git"
   },
   "version": "0.0.8"
 }
