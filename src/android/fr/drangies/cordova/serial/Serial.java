@@ -69,7 +69,6 @@ public class Serial extends CordovaPlugin {
 	private boolean setDTR;
 	private boolean setRTS;
 	private boolean sleepOnPause;
-	private UsbSerialProber test;
 	
 	// callback that will be used to send back data to the cordova app
 	private CallbackContext readCallback;
@@ -154,6 +153,7 @@ public class Serial extends CordovaPlugin {
 				// get UsbManager from Android
 				manager = (UsbManager) cordova.getActivity().getSystemService(Context.USB_SERVICE);
 				UsbSerialProber prober;
+				UsbSerialProber x;
 
 				if (opts.has("vid") && opts.has("pid")) {
 					ProbeTable customTable = new ProbeTable();
@@ -189,7 +189,7 @@ public class Serial extends CordovaPlugin {
 				else {
 					// find all available drivers from attached devices.
 					prober = UsbSerialProber.getDefaultProber();
-					test = prober;
+					x = prober;
 				}
 
 				List<UsbSerialDriver> availableDrivers = prober.findAllDrivers(manager);
@@ -212,7 +212,7 @@ public class Serial extends CordovaPlugin {
 				else {
 					// no available drivers
 					Log.d(TAG, "No device found!");
-					callbackContext.error(prober);
+					callbackContext.error(x);
 				}
 			}
 		});
