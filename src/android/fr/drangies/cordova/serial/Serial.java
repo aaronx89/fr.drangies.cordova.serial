@@ -189,7 +189,7 @@ public class Serial extends CordovaPlugin {
 				else {
 					// find all available drivers from attached devices.
 					prober = UsbSerialProber.getDefaultProber();
-					x = "Si pasa por este método"
+					x = "Si pasa por este método";
 				}
 
 				List<UsbSerialDriver> availableDrivers = prober.findAllDrivers(manager);
