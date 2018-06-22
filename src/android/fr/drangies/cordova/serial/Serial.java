@@ -153,7 +153,7 @@ public class Serial extends CordovaPlugin {
 				// get UsbManager from Android
 				manager = (UsbManager) cordova.getActivity().getSystemService(Context.USB_SERVICE);
 				UsbSerialProber prober;
-				String x;
+				String x = "";
 
 				if (opts.has("vid") && opts.has("pid")) {
 					ProbeTable customTable = new ProbeTable();
