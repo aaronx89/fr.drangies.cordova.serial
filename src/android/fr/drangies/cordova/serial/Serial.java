@@ -168,6 +168,7 @@ public class Serial extends CordovaPlugin {
 					}
 					else if (driver.equals("CdcAcmSerialDriver")) {
 						customTable.addProduct(vid, pid, CdcAcmSerialDriver.class);
+						x = "Entra al Driver"
 					}
 					else if (driver.equals("Cp21xxSerialDriver")) {
                     	customTable.addProduct(vid, pid, Cp21xxSerialDriver.class);
