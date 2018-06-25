@@ -196,6 +196,7 @@ public class Serial extends CordovaPlugin {
 
 				if (availableDrivers.isEmpty()) {
 					// get the first one as there is a high chance that there is no more than one usb device attached to your android
+					try{
 					driver = availableDrivers.get(0);
 					UsbDevice device = driver.getDevice();
 					// create the intent that will be used to get the permission
@@ -208,6 +209,10 @@ public class Serial extends CordovaPlugin {
 					cordova.getActivity().registerReceiver(usbReceiver, filter);
 					// finally ask for the permission
 					manager.requestPermission(device, pendingIntent);
+					}
+					catch (IOException  e) {
+						callbackContext.error(e.getMessage());
+					}
 				}
 				else {
 					// no available drivers
