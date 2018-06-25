@@ -167,7 +167,6 @@ public class Serial extends CordovaPlugin {
 						customTable.addProduct(vid, pid, FtdiSerialDriver.class);
 					}
 					else if (driver.equals("CdcAcmSerialDriver")) {
-						x = "Entra al Driver";
 						customTable.addProduct(vid, pid, CdcAcmSerialDriver.class);
 					}
 					else if (driver.equals("Cp21xxSerialDriver")) {
@@ -213,7 +212,7 @@ public class Serial extends CordovaPlugin {
 				else {
 					// no available drivers
 					Log.d(TAG, "No device found!");
-					callbackContext.error(x);
+					callbackContext.error("hello");
 				}
 			}
 		});
