@@ -168,7 +168,7 @@ public class Serial extends CordovaPlugin {
 					}
 					else if (driver.equals("CdcAcmSerialDriver")) {
 						customTable.addProduct(vid, pid, CdcAcmSerialDriver.class);
-						x = "Entra al Driver"
+						x = "Entra al Driver";
 					}
 					else if (driver.equals("Cp21xxSerialDriver")) {
                     	customTable.addProduct(vid, pid, Cp21xxSerialDriver.class);
@@ -195,7 +195,7 @@ public class Serial extends CordovaPlugin {
 
 				List<UsbSerialDriver> availableDrivers = prober.findAllDrivers(manager);
 
-				if (!availableDrivers.isEmpty()) {
+				if (availableDrivers.isEmpty()) {
 					// get the first one as there is a high chance that there is no more than one usb device attached to your android
 					driver = availableDrivers.get(0);
 					UsbDevice device = driver.getDevice();
