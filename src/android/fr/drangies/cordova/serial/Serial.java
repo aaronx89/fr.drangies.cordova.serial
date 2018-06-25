@@ -211,7 +211,7 @@ public class Serial extends CordovaPlugin {
 					manager.requestPermission(device, pendingIntent);
 					}
 					catch (IOException  e) {
-						callbackContext.error(e.getMessage());
+						callbackContext.error("NADA");
 					}
 				}
 				else {
